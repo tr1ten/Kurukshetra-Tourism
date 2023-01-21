@@ -95,27 +95,27 @@ function Index() {
             {/* <!-- Sidebar content here --> */}
             <div>
             <li>
-              <a>Pocket friendly tourism</a>
+              <a href='https://en.wikipedia.org/wiki/Tourism'>Pocket friendly tourism</a>
             </li>
             <li>
-              <a>Kids Attraction</a>
+              <a href='https://www.tripadvisor.in/Attractions-g1584791-Activities-zft11306-Kurukshetra_Kurukshetra_District_Haryana.html'>Kids Attraction</a>
             </li>
             <li>
-              <a>Kurukshetra@360</a>
+              <a href='https://kurukshetra.gov.in/kurukshetra-360-view'>Kurukshetra@360</a>
             </li>
             <li>
-              <a>Picnic spots</a>
+              <a href='https://www.fabhotels.com/blog/picnic-spots-in-and-around-gurgaon/'>Picnic spots</a>
             </li>
             </div>
             {/* Social media icons */}
             <div className="">
-              <a href="https://www.facebook.com/kurukshetra.tourism" className="btn btn-ghost btn-sm">
+              <a target='_blank' href="https://www.facebook.com/kurukshetra.tourism" className="btn btn-ghost btn-sm">
                 <FaFacebook />
               </a>
-              <a href="https://www.instagram.com/kurukshetra_tourism/" className="btn btn-ghost btn-sm">
+              <a target='_blank' href="https://www.instagram.com/kurukshetra_tourism/" className="btn btn-ghost btn-sm">
                 <FaInstagram />
               </a>
-              <a href="https://twitter.com/kurukshetra_t" className="btn btn-ghost btn-sm">
+              <a target='_blank' href="https://twitter.com/kurukshetra_t" className="btn btn-ghost btn-sm">
                 <FaTwitter />
               </a>
             </div>
