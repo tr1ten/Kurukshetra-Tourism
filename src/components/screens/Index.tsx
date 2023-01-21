@@ -31,9 +31,9 @@ function Index() {
   return (
     <>
       <Head title="Home" description="Welcome" />
-      <div className="flex w-full ">
+      <div className="flex flex-col md:flex-row w-full ">
         <div className="carousel">
-          <div id="slide1" className="carousel-item h-72 relative w-full">
+          <div id="slide1" className="carousel-item h-fit md:h-96  relative w-full">
             <img
               src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018052556.jpg"
               className="w-full"
@@ -47,7 +47,7 @@ function Index() {
               </a>
             </div>
           </div>
-          <div id="slide2" className="carousel-item h-72 relative w-full">
+          <div id="slide2" className="carousel-item h-fit md:h-96 relative w-full">
             <img
               src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
               className="w-full"
@@ -61,7 +61,7 @@ function Index() {
               </a>
             </div>
           </div>
-          <div id="slide3" className="carousel-item h-72 relative w-full">
+          <div id="slide3" className="carousel-item h-fit md:h-96 relative w-full">
             <img
               src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
               className="w-full"
@@ -75,7 +75,7 @@ function Index() {
               </a>
             </div>
           </div>
-          <div id="slide4" className="carousel-item h-72 relative w-full">
+          <div id="slide4" className="carousel-item h-fit md:h-96 relative w-full">
             <img
               src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
               className="w-full"
@@ -91,7 +91,7 @@ function Index() {
           </div>
         </div>
         <div>
-          <div className="menu p-4 w-80 flex flex-col bg-blue-400 h-full text-white">
+          <div className="menu p-4 w-full md:w-80 flex flex-col bg-blue-400 h-full text-white">
             {/* <!-- Sidebar content here --> */}
             <div>
             <li>
@@ -131,8 +131,8 @@ function Index() {
         </video>
 
 
-        <div className="card-body">
-          <h2 className="card-title">Why one should visit Kurukshetra</h2>
+        <div id="explore" className="card-body">
+          <h2 className="card-title">Why one should visit Kurukshetra?</h2>
           <p>
             Kurukshetra is a city in the Indian state of Haryana, known for its historical and religious significance.
             It is believed to be the site of the Battle of Kurukshetra, as described in the ancient Indian epic
