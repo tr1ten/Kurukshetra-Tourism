@@ -35,28 +35,28 @@ function Index() {
         <div className="carousel">
           <div id="slide1" className="carousel-item h-fit md:h-96  relative w-full">
             <img
-              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018052556.jpg"
+              src="https://drive.google.com/uc?export=download&id=1NXrZYHXwGKbh2_1p-hyO6UYmPO3WuDza"
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide4" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide4" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide2" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide2" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
           </div>
           <div id="slide2" className="carousel-item h-fit md:h-96 relative w-full">
             <img
-              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018052556.jpg"
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide1" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide3" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide3" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
@@ -67,10 +67,10 @@ function Index() {
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide2" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide4" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide4" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
@@ -81,10 +81,10 @@ function Index() {
               className="w-full"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide3" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide1" className="btn btn-circle btn-ghost text-white text-lg">
+              <a href="#slide1" className="btn bg-blue-400 btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
