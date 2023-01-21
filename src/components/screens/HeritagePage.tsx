@@ -20,7 +20,7 @@ function HeritagePage() {
         >
           <img
             className="w-56 md:w-full"
-            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg"
+            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/7f/df/6e/brahma-sarovar.jpg?w=1200&h=-1&s=1"
             alt="Album"
           />
         </figure>
@@ -35,7 +35,7 @@ function HeritagePage() {
         >
           <img
             className=" md:w-full"
-            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011268-1-1024x768.jpg"
+            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018050164.jpg "
             alt="Album"
           />
         </figure>
@@ -70,7 +70,7 @@ function HeritagePage() {
         >
           <img
             className="w-56 md:w-full"
-            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
+            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg"
             alt="Album"
           />
         </figure>
