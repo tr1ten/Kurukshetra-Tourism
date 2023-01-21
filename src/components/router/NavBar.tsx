@@ -78,7 +78,7 @@ function NavBar(props: Props) {
           </ul>
         </div>
         <div className="navbar-end">
-          <a href='#explore' className="btn bg-blue-500 border-none">Explore</a>
+          <a href='/#explore' className="btn bg-blue-500 border-none">Explore</a>
         </div>
       </div>
     </>

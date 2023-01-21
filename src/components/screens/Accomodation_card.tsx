@@ -18,7 +18,7 @@ function accomodation_card({ accommodation }: { accommodation: Accomodation}) {
         </div>
 
         <div className="card-actions text-end">
-          <a href={accommodation.url}>
+          <a target="_blank" href={accommodation.url}>
             <button className="btn border-none bg-blue-400">Book Now</button>
           </a>
         </div>
