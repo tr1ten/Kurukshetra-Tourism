@@ -14,7 +14,7 @@ function accomodation_card({ accommodation }: { accommodation: Accomodation}) {
         </div>
         <div className="flex">
           <div className="badge ">Price</div>
-          <p className=" ml-4 mb-8"> &#8377; {accommodation.cost}/Person</p>
+          <p className=" ml-4 mb-8"> &#8377; {accommodation.cost ?? 100}/Person</p>
         </div>
 
         <div className="card-actions text-end">

@@ -25,12 +25,12 @@ function AccomodationsPage() {
   },[]);
   return (
     <>
-      <h1 className='font-bold text-center m-2 text-2xl'>Accommodation</h1>
-    <div className="flex flex-wrap mx-36 m-5 gap-2">
+      <h1 className='font-bold text-center m-2 text-2xl'>Accommodations</h1>
+    <div className="flex flex-wrap mx-10 m-5 gap-4">
       {
         Accomodations.length===0 ? <p>No Accomodations found!</p> :
-        Accomodations.map((e) => (
-          <AccommodationCard  accommodation={e}/>
+        Accomodations.map((e,i) => (
+          <AccommodationCard  key={`${i}`} accommodation={e}/>
         ))
       }
     </div>

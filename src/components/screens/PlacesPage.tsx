@@ -3,14 +3,7 @@ import PlaceCard from './place_card';
 import { Place } from './PlacePage';
 import { collection, query, where, onSnapshot } from 'firebase/firestore';
 import { useFirestore } from '~/lib/firebase';
-const imageSizes = [
-  { url: 'horizontal', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { url: 'horizontal', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { url: 'horizontal', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { url: 'horizontal', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { url: 'horizontal', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { url: 'horizontal', Title: 600, description: 'horizontal', direction: 'horizontal' },
-];
+
 function PlacesPage() {
   const [places, setPlaces] = useState<Place[]>([]);
   const db = useFirestore();
@@ -24,11 +17,11 @@ function PlacesPage() {
     });
   },[])
   return (
-    <div className='m-2'>
+    <div className='mx-10'>
       <h1 className='font-bold text-center m-2 text-2xl'>Amazing Places to Visit</h1>
       {
         places.length===0 ? <p>No Places found!</p> :
-        <div className="flex mx-32 flex-wrap">{places.map((e) => <PlaceCard place={e}/>)}</div>
+        <div className="flex gap-4 mx-auto flex-wrap">{places.map((e) => <PlaceCard place={e}/>)}</div>
       }
     </div>
   );

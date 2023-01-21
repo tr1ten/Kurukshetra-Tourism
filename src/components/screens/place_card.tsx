@@ -25,7 +25,7 @@ function placeCard({place}:{place:Place}) {
         
         <div className="card-actions justify-end">
           <a href={place.map}>
-            <Link to={`/places/${place.id}`} className="btn btn-primary">Details</Link>
+            <Link to={`/places/${place.id}`} className="btn bg-blue-400 border-none">Details</Link>
           </a>
         </div>
       </div>
