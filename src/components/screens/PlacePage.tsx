@@ -27,7 +27,7 @@ function PlacePage() {
     onSnapshot(q, (snapshot) => {
       setPlace(snapshot.docs[0].data() as Place);
     });
-  },[]);
+  }, []);
   return (
     <div className="w-10/12 md:w-8/12  m-auto">
       {!place ? (
