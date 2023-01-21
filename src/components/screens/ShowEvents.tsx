@@ -4,7 +4,7 @@ import { useFirestore } from "~/lib/firebase";
 import EventCor from "./EventCor";
 
 export interface Event {
-    id: number;
+    id: string;
     title: string;
     description: string;
     date: string;

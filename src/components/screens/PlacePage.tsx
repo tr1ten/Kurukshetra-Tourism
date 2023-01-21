@@ -61,7 +61,7 @@ function PlacePage() {
             <h2 className="text-2xl font-semibold">Description</h2>
             <p className="text-gray-500">{place.description}</p>
           </div>
-          <ReviewSystem placeId={place.id} />
+          <ReviewSystem idKey="placeId" oid={place.id} />
         </div>
       )}
     </div>

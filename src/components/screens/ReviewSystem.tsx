@@ -5,6 +5,7 @@ import { useAuthState } from "../contexts/UserContext";
 
 interface Review{
     placeId: string;
+    eventId: string;
     userId: string;
     username: string;
     img: string;
@@ -13,7 +14,7 @@ interface Review{
     date: Date;
 }
 
-function ReviewSystem({placeId}: {placeId: string}) {
+function ReviewSystem({oid,idKey}: {oid: string,idKey: string}) {
     const [reviews, setReviews] = useState<Review[]>([]);
     const db = useFirestore();
     const auth = useAuth();
@@ -21,7 +22,7 @@ function ReviewSystem({placeId}: {placeId: string}) {
     const [loading,setLoading] = useState(false);
     useEffect(() => {
         const reviewsRef = collection(db, 'reviews');
-        const q = query(reviewsRef, where('placeId', '==', placeId),limit(4));
+        const q = query(reviewsRef, where(idKey, '==', oid),limit(4));
         onSnapshot(q, (snapshot) => {
             setReviews(snapshot.docs.map(doc => doc.data() as Review));
         });
@@ -32,7 +33,7 @@ function ReviewSystem({placeId}: {placeId: string}) {
         setLoading(true);
         const reviewRef = collection(db, 'reviews');
         const reviewDoc = {
-            placeId: placeId,
+            [idKey]: oid,
             userId: auth.currentUser?.uid,
             img: auth.currentUser?.photoURL,
             username: auth.currentUser?.displayName,

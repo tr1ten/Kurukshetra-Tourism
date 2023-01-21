@@ -48,10 +48,9 @@ function EventPage() {
                         <h2 className="text-2xl font-semibold">Description</h2>
                         <p className="text-gray-500">{event.description}</p>
                       </div>
+                        <ReviewSystem idKey="eventId" oid={event.id} />
                     </div>
                   )
-
-
             }
         </div>
     );
