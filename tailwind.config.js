@@ -7,6 +7,12 @@ module.exports = {
     content: ['./index.html', './src/**/*.tsx', './src/**/*.ts'],
   },
   theme: {
+    extend: {
+      colors: {
+        // blue
+        'primary': '#3B82F6',
+      },
+    },
     minWidth: {
       '40': '10rem',
       '60': '15rem',
@@ -24,8 +30,11 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
+    
     themes: [
-      'emerald'
+      'emerald',
+      'dark',
+      'light',
     ],
   }
 }
