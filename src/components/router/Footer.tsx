@@ -3,13 +3,17 @@ function Footer() {
     <footer className="footer p-10 bg-base-300 text-base-content">
       <div>
         <span className="footer-title">Developed By</span>
-        <a className="link link-hover" href="https://www.linkedin.com/in/ravindra-kumar-prajapat-341027230/">
+        <a
+          className="link link-hover"
+          href="https://www.linkedin.com/in/ravindra-kumar-prajapat-341027230/"
+          target="_blank"
+        >
           Ravindra Kumar Prajapat
         </a>
-        <a className="link link-hover" href="https://www.linkedin.com/in/tr1ten/s">
+        <a className="link link-hover" href="https://www.linkedin.com/in/tr1ten/s" target="_blank">
           Shubham Gupta
         </a>
-        <a className="link link-hover" href="https://www.linkedin.com/in/sushmit-bhalothia-110276229/">
+        <a className="link link-hover" href="https://www.linkedin.com/in/sushmit-bhalothia-110276229/" target="_blank">
           Sushmit
         </a>
       </div>
