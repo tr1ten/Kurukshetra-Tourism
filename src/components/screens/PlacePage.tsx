@@ -6,7 +6,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { MdAirlineSeatReclineNormal } from 'react-icons/md';
 import ReviewSystem from './ReviewSystem';
 import Rating from './Rating';
-interface Place {
+export interface Place {
   id: string;
   title: string;
   description: string;
@@ -52,7 +52,7 @@ function PlacePage() {
                 <span className="text-lg font-semibold"> &#8377; {place.cost ?? 100}</span>
               </p>
               <div>
-              <Rating rating={place.rating ?? 3} />
+                <Rating rating={place.rating ?? 3} />
               </div>
               <button className="btn">Open in map</button>
             </div>

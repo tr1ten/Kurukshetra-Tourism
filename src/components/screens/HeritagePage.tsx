@@ -74,11 +74,7 @@ function HeritagePage() {
           />
         </figure>
       </div>
-      <img
-        className="w-2/3 mx-54"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmO8hG-jo9bfm3Y29dTYGhdr4b-ip0BT9a5u4ywhZD7aq69icHdXmMsPVPoWBLOksO-9I&usqp=CAU"
-        alt=""
-      />
+      
     </div>
   );
 }

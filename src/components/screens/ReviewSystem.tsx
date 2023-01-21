@@ -65,9 +65,10 @@ function ReviewSystem({placeId}: {placeId: string}) {
             </div>
             {/* Form for writing review */}
             <hr className="my-4" />
+            <h2 className="font-bold">Post a review</h2>
             {state.state!='SIGNED_IN' ? <p>Please sign in to write a review</p> : (
                 <form onSubmit={onSubmitReview} className="flex flex-col">
-                    <textarea className="textarea textarea-bordered" value={review} onChange={(e) => setReview(e.target.value)}></textarea>
+                    <textarea placeholder="Awesome place..." className="textarea textarea-bordered" value={review} onChange={(e) => setReview(e.target.value)}></textarea>
                     <button disabled={loading} type="submit" className="btn btn-outline btn-primary mt-2">Submit</button>
                 </form>
 
