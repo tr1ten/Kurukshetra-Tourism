@@ -25,7 +25,7 @@ function AccomodationsPage() {
   },[]);
   return (
     <>
-      <h1 className='font-bold text-center m-2 text-2xl'>Amazing Places to Visit</h1>
+      <h1 className='font-bold text-center m-2 text-2xl'>Accommodation</h1>
     <div className="flex flex-wrap mx-36 m-5 gap-2">
       {
         Accomodations.length===0 ? <p>No Accomodations found!</p> :
