@@ -13,7 +13,7 @@ function NavBar(props: Props) {
   return (
     <>
       <div className="flex flex-row w-full gap-3  bg-blue-400 p-2 text-white justify-end mr-3 text-sm">
-        <span>Contact Us</span>
+        <a target="_blank" href='mailto:shubhi.blog@gmail.com' >Contact Us</a>
         {/* Line  */}
         <span className='border-r-2 border-white'></span>
         {state.state === 'UNKNOWN' ? "User" : state.state === 'SIGNED_OUT' ? <SignInButton /> : <SignOutButton />}
