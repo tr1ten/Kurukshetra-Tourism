@@ -1,6 +1,9 @@
+import { Head } from "../shared/Head";
+
 function HeritagePage() {
   return (
     <div>
+      <Head title='Heritage' />
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
         <div className="card-body">
           <h2 className="card-title">Brahma Sarovar</h2>

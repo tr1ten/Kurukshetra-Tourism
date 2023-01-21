@@ -13,6 +13,7 @@ function EventCor({ events }: { events: Event[] }) {
           <h1 className="text-center font-bold text-xl">{events[0].type} EVENTS</h1>
           <Carousel
             className="w-full md:w-1/2"
+            infiniteLoop
             showArrows={true}
             showThumbs={false}
             showIndicators={false}
@@ -20,8 +21,8 @@ function EventCor({ events }: { events: Event[] }) {
             autoPlay
             interval={3000}
           >
-            {events.map((e) => (
-              <div>
+            {events.map((e,i) => (
+              <div key={i}>
                 <img className="" alt="" src={e.img} />
                 <div className="legend opacity-100 bg-primary">
                   <h3 className="font-bold">{e.title}</h3>

@@ -6,6 +6,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { MdAirlineSeatReclineNormal } from 'react-icons/md';
 import ReviewSystem from './ReviewSystem';
 import Rating from './Rating';
+import { Head } from '../shared/Head';
 export interface Place {
   id: string;
   title: string;
@@ -30,6 +31,7 @@ function PlacePage() {
   }, []);
   return (
     <div className="w-10/12 md:w-8/12  m-auto">
+      <Head title={place?.title ?? "Place"} />
       {!place ? (
         <div>Loading...</div>
       ) : (

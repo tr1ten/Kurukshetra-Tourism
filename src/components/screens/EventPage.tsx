@@ -1,7 +1,7 @@
 import { collection, query, where, onSnapshot } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdAirlineSeatReclineNormal } from "react-icons/md";
+import { FaCalendar } from "react-icons/fa";
 import { useParams } from "react-router";
 import { useFirestore } from "~/lib/firebase";
 import Rating from "./Rating";
@@ -17,7 +17,8 @@ function EventPage() {
         onSnapshot(q, (snapshot) => {
             setEvent(snapshot.docs[0].data() as Event);
         });
-    });
+    },[]);
+    console.log("Event", event);
     return (
         <div className="w-10/12 md:w-8/12  m-auto">
             {!event ? <p>No Such event Exist...</p> :
@@ -33,11 +34,15 @@ function EventPage() {
                             <li>
                               <FaMapMarkerAlt className="inline" /> {event.location ?? 'Kurukshetra'}
                             </li>
+                            <li>
+                              <FaCalendar className="inline" /> {event.time ?? '12/12/2021'}
+                            </li>
                             
                           </ul>
                           <p className="text-gray-500 ">
                             <span className="text-lg font-semibold"> &#8377; {event.price ?? 100}</span>
                           </p>
+
                           <div>
                             <Rating rating={event.rating ?? 3} />
                           </div>

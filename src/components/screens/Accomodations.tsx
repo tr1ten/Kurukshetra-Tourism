@@ -4,6 +4,7 @@ import { useFirestore } from '~/lib/firebase';
 import { useEffect } from 'react';
 import { collection, query, onSnapshot } from '@firebase/firestore';
 import React from 'react';
+import { Head } from '../shared/Head';
 export interface Accomodation {
   img:string;
   title: string,
@@ -25,6 +26,7 @@ function AccomodationsPage() {
   },[]);
   return (
     <>
+      <Head title='Accomodations' />
       <h1 className='font-bold text-center m-2 text-2xl'>Accommodations</h1>
     <div className="flex flex-wrap mx-10 m-5 gap-4">
       {

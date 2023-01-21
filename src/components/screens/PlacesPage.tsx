@@ -3,6 +3,7 @@ import PlaceCard from './place_card';
 import { Place } from './PlacePage';
 import { collection, query, where, onSnapshot } from 'firebase/firestore';
 import { useFirestore } from '~/lib/firebase';
+import { Head } from '../shared/Head';
 
 function PlacesPage() {
   const [places, setPlaces] = useState<Place[]>([]);
@@ -18,6 +19,7 @@ function PlacesPage() {
   },[])
   return (
     <div className='mx-10'>
+      <Head title='Places' />
       <h1 className='font-bold text-center m-2 text-2xl'>Amazing Places to Visit</h1>
       {
         places.length===0 ? <p>No Places found!</p> :

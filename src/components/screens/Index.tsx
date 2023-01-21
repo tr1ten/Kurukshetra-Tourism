@@ -126,7 +126,7 @@ function Index() {
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
-        <video className="w-full md:w-1/3 " controls>
+        <video className="w-full md:w-1/3 " autoPlay muted>
           <source src={Video} type="video/mp4" />
         </video>
 
