@@ -9,7 +9,6 @@ type Props = {
 
 function NavBar(props: Props) {
   const {state} = useAuthState();
-  console.log("here state", state.state);
   return (
     <>
       <div className="flex flex-row w-full gap-3  bg-blue-400 p-2 text-white justify-end mr-3 text-sm">

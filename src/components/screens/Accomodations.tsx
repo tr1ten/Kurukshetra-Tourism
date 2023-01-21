@@ -1,21 +1,40 @@
 import Rating from './Rating';
-import Card from './Accomodation_card';
+import AccommodationCard  from './Accomodation_card';
+import { useFirestore } from '~/lib/firebase';
+import { useEffect } from 'react';
+import { collection, query, onSnapshot } from '@firebase/firestore';
+import React from 'react';
+export interface Accomodation {
+  img:string;
+  title: string,
+  url: string,
+  cost: 900,
+  rating: 4,
+}
 
-const Accomodation = [
-  { image: 'https://placeimg.com/400/225/arch', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { image: 'https://placeimg.com/400/225/arch', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { image: 'https://placeimg.com/400/225/arch', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { image: 'https://placeimg.com/400/225/arch', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { image: 'https://placeimg.com/400/225/arch', Title: 600, description: 'horizontal', direction: 'horizontal' },
-  { image: 'https://placeimg.com/400/225/arch', Title: 600, description: 'horizontal', direction: 'horizontal' },
-];
 function AccomodationsPage() {
+  const [Accomodations, setAccomodations] = React.useState<Accomodation[]>([]);
+  const db = useFirestore();
+  useEffect(() => {
+    const eventsRef = collection(db, 'accommodations');
+    const q = query(eventsRef);
+    onSnapshot(q, (snapshot) => {
+        setAccomodations(snapshot.docs.map(doc => doc.data() as Accomodation));
+    });
+    
+  },[]);
   return (
-    <div className="flex flex-wrap mx-36">
-      {Accomodation.map((e) => (
-        <Card>place={e}</Card>
-      ))}
+    <>
+      <h1 className='font-bold text-center m-2 text-2xl'>Amazing Places to Visit</h1>
+    <div className="flex flex-wrap mx-36 m-5 gap-2">
+      {
+        Accomodations.length===0 ? <p>No Accomodations found!</p> :
+        Accomodations.map((e) => (
+          <AccommodationCard  accommodation={e}/>
+        ))
+      }
     </div>
+    </>
   );
 }
 

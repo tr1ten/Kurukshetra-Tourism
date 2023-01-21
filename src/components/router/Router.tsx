@@ -3,6 +3,7 @@ import { lazy, Suspense, useState } from 'react';
 import { Outlet, RouteObject, useRoutes, BrowserRouter, Link } from 'react-router-dom';
 import { setupFirebase } from '~/lib/firebase';
 import AccomodationsPage from '../screens/Accomodations';
+import EventPage from '../screens/EventPage';
 import HeritagePage from '../screens/HeritagePage';
 import PlacePage from '../screens/PlacePage';
 import PlacesPage from '../screens/PlacesPage';
@@ -66,6 +67,11 @@ const InnerRouter = () => {
         {
           path: '/places/:placeId',
           element: <PlacePage />
+        },
+        {
+          path: '/events/:eventId',
+          element: <EventPage />
+
         },
         {
           path: '*',

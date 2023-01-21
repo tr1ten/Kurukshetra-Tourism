@@ -10,9 +10,11 @@ export interface Event {
     date: string;
     time: string;
     location: string;
+    rating: number;
     img: string;
     price: number;
     type: string;
+    map: string;
 
 }
 // Show both 
@@ -24,11 +26,9 @@ function ShowEvents() {
         const q = query(eventsRef);
         onSnapshot(q, (snapshot) => {
             setEvents(snapshot.docs.map(doc => doc.data() as Event));
-            console.log("here events",snapshot.docs[0].data());
         });
         
     },[]);
-    console.log("upcoming events",events.filter((e)=>e.type==='UPCOMING'));
     
     return (
         <div className="w-full">

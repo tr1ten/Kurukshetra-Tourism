@@ -25,7 +25,7 @@ function PlacesPage() {
   },[])
   return (
     <div className='m-2'>
-      <h1 className='font-bold text-xl'>Places</h1>
+      <h1 className='font-bold text-center m-2 text-2xl'>Amazing Places to Visit</h1>
       {
         places.length===0 ? <p>No Places found!</p> :
         <div className="flex mx-32 flex-wrap">{places.map((e) => <PlaceCard place={e}/>)}</div>
