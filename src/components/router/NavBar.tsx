@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import Logo from './logo.png';
 type Props = {
   toggleDark: () => void;
 };
@@ -7,9 +7,13 @@ type Props = {
 function NavBar(props: Props) {
   return (
     <>
-      <div className="flex flex-row w-full gap-3 bg-blue-400 p-2 text-white justify-end mr-3 text-sm">
+      <div className="flex flex-row w-full gap-3  bg-blue-400 p-2 text-white justify-end mr-3 text-sm">
         <span>Contact Us</span>
+        {/* Line  */}
+        <span className='border-r-2 border-white'></span>
         <span>Complain</span>
+        <span className='border-r-2 border-white'></span>
+
         <span className='flex gap-1 items-center'>
           <span >Dark</span>
           <input 
@@ -18,7 +22,7 @@ function NavBar(props: Props) {
         </span>
       </div>
       <div className="navbar bg-base-100">
-        <div className="navbar-start">
+        <div className="navbar-start p-2">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -38,31 +42,33 @@ function NavBar(props: Props) {
               <Link className="btn btn-ghost" to={'/'}>
                 Home
               </Link>
-              <Link className="btn btn-ghost" to={'/'}>
+              <Link className="btn btn-ghost" to={'/places'}>
                 Places to visit
               </Link>
-              <Link className="btn btn-ghost" to={'/'}>
+              <Link className="btn btn-ghost" to={'/accommodations'}>
                 Accomodation
               </Link>
-              <Link className="btn btn-ghost" to={'/'}>
+              <Link className="btn btn-ghost" to={'/heritage'}>
                 Heritage
               </Link>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">KKR Tourism</a>
-        </div>
+          <a className=" normal-case text-xl">
+            <img src={Logo} alt="logo" className="h-16" />
+          </a>
+        </div>  
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <Link className="btn btn-ghost" to={'/'}>
               Home
             </Link>
-            <Link className="btn btn-ghost" to={'/'}>
+            <Link className="btn btn-ghost" to={'/places'}>
               Places to visit
             </Link>
-            <Link className="btn btn-ghost" to={'/'}>
+            <Link className="btn btn-ghost" to={'/accommodations'}>
               Accomodation
             </Link>
-            <Link className="btn btn-ghost" to={'/'}>
+            <Link className="btn btn-ghost" to={'/heritage'}>
               Heritage
             </Link>
           </ul>
