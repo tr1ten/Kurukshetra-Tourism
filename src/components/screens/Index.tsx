@@ -6,7 +6,8 @@ import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
 import { useAuth, useFirestore, useStorage } from '~/lib/firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
-import { FaFacebook } from 'react-icons/fa';
+import { FaFacebook,FaInstagram,FaTwitter } from 'react-icons/fa';
+import Video from '../../assets/video.mp4';
 // import Bharamsarovar1 from '../../assets/brahmaSarover.jpg';
 // import Jyotisar from '../../assets/jyotisar.jpg';
 // import Sheikh from '../../assets/sheikh.jpg';
@@ -15,6 +16,7 @@ function Index() {
   const [messege, setMessege] = useState('');
   const auth = useAuth();
   const db = useFirestore();
+  
   const onSend = async () => {
     try {
       await addDoc(collection(db, 'tasks'), {
@@ -88,7 +90,7 @@ function Index() {
           </div>
         </div>
         <div>
-          <div className="menu p-4 w-80  bg-blue-400 h-full text-white">
+          <div className="menu p-4 w-80 flex flex-col bg-blue-400 h-full text-white">
             {/* <!-- Sidebar content here --> */}
             <div>
             <li>
@@ -105,7 +107,17 @@ function Index() {
             </li>
             </div>
             {/* Social media icons */}
-            
+            <div className="">
+              <a href="https://www.facebook.com/kurukshetra.tourism" className="btn btn-ghost btn-sm">
+                <FaFacebook />
+              </a>
+              <a href="https://www.instagram.com/kurukshetra_tourism/" className="btn btn-ghost btn-sm">
+                <FaInstagram />
+              </a>
+              <a href="https://twitter.com/kurukshetra_t" className="btn btn-ghost btn-sm">
+                <FaTwitter />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -113,7 +125,11 @@ function Index() {
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/9TDlxwqRMks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <video className="w-full md:w-1/3 " controls>
+          <source src={Video} type="video/mp4" />
+        </video>
+
+
         <div className="card-body">
           <h2 className="card-title">Why one should visit Kurukshetra</h2>
           <p>
@@ -145,8 +161,12 @@ function Index() {
             </ul>
           </div>
         </div>
-        <figure>
-          <img src="https://placeimg.com/400/400/arch" alt="Album" />
+        <figure style={
+        {
+          justifyContent: 'flex-end',
+        }
+        } className='items-end justify-end'>
+          <img className='w-56 md:w-2/3' src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg" alt="Album" />
         </figure>
       </div>
     </>
