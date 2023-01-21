@@ -6,6 +6,7 @@ import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
 import { useAuth, useFirestore, useStorage } from '~/lib/firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { FaFacebook } from 'react-icons/fa';
 // import Bharamsarovar1 from '../../assets/brahmaSarover.jpg';
 // import Jyotisar from '../../assets/jyotisar.jpg';
 // import Sheikh from '../../assets/sheikh.jpg';
@@ -27,56 +28,69 @@ function Index() {
   return (
     <>
       <Head title="Home" description="Welcome" />
-      <div className="flex">
-        <div className="carousel w-full h-72  flex-1">
-          <div id="slide1" className="carousel-item relative w-full">
-            <img src="" className="w-full h-1" />
+      <div className="flex w-full ">
+        <div className="carousel w-full">
+          <div id="slide1" className="carousel-item h-72 relative w-full">
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018052556.jpg"
+              className="w-full"
+            />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide4" className="btn btn-circle">
+              <a href="#slide4" className="btn btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide2" className="btn btn-circle">
+              <a href="#slide2" className="btn btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
           </div>
-          <div id="slide2" className="carousel-item relative w-full">
-            <img src="" className="w-full" />
+          <div id="slide2" className="carousel-item h-72 relative w-full">
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
+              className="w-full"
+            />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" className="btn btn-circle">
+              <a href="#slide1" className="btn btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide3" className="btn btn-circle">
+              <a href="#slide3" className="btn btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
           </div>
-          <div id="slide3" className="carousel-item relative w-full">
-            <img src="" className="w-full" />
+          <div id="slide3" className="carousel-item h-72 relative w-full">
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
+              className="w-full"
+            />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" className="btn btn-circle">
+              <a href="#slide2" className="btn btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide4" className="btn btn-circle">
+              <a href="#slide4" className="btn btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
           </div>
-          <div id="slide4" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div id="slide4" className="carousel-item h-72 relative w-full">
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
+              className="w-full"
+            />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" className="btn btn-circle">
+              <a href="#slide3" className="btn btn-circle btn-ghost text-white text-lg">
                 ❮
               </a>
-              <a href="#slide1" className="btn btn-circle">
+              <a href="#slide1" className="btn btn-circle btn-ghost text-white text-lg">
                 ❯
               </a>
             </div>
           </div>
         </div>
         <div>
-          <ul className="menu p-4 w-80 text-base-content ">
+          <div className="menu p-4 w-80  bg-blue-400 h-full text-white">
             {/* <!-- Sidebar content here --> */}
+            <div>
             <li>
               <a>Pocket friendly tourism</a>
             </li>
@@ -89,37 +103,46 @@ function Index() {
             <li>
               <a>Picnic spots</a>
             </li>
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
-          </ul>
+            </div>
+            {/* Social media icons */}
+            
+          </div>
         </div>
 
         {/* mmk */}
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
-        <figure>
-          <img src="https://placeimg.com/400/400/arch" alt="Album" />
-        </figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9TDlxwqRMks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div className="card-body">
-          <h2 className="card-title">Why visit KKr</h2>
-          <p>Click the button to listen on Spotiwhy app.</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Listen</button>
-          </div>
+          <h2 className="card-title">Why one should visit Kurukshetra</h2>
+          <p>
+            Kurukshetra is a city in the Indian state of Haryana, known for its historical and religious significance.
+            It is believed to be the site of the Battle of Kurukshetra, as described in the ancient Indian epic
+            Mahabharata. The city is also home to several important temples, such as the Jyotisar Temple and the Brahma
+            Sarovar, which are considered sacred by Hindus. Additionally, Kurukshetra is known for its rich cultural
+            heritage and is a popular destination for those interested in history and religion.
+          </p>
         </div>
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
         <div className="card-body">
-          <h2 className="card-title">Facts about KKR</h2>
-          <p>Click the button to listen on Spotiwhy app.</p>
-          <div className="card-actions justify-start">
-            <button className="btn btn-primary">Listen</button>
+          <h2 className="card-title">Facts about Kurukshetra</h2>
+          <div>
+            <ul className="list-disc">
+              <li>It is the land of the Bhagwad Gita</li>
+              <li>
+                It was established in 1963 as Regional Engineering College Kurukshetra and upgraded to NIT status in
+                2002.
+              </li>
+              <li>
+                It offers undergraduate, postgraduate and doctoral programs in various fields of Engineering, Applied
+                Sciences, and Management
+              </li>
+              <li>The campus is spread over an area of around 300 acres.</li>
+              <li>It has collaborations with many industries and foreign universities.</li>
+            </ul>
           </div>
         </div>
         <figure>
