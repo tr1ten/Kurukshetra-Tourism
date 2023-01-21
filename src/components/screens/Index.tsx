@@ -5,42 +5,81 @@ import { SignInButton } from '~/components/domain/auth/SignInButton';
 import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
 import { useAuth, useFirestore, useStorage } from '~/lib/firebase';
-import { collection,addDoc,Timestamp } from 'firebase/firestore';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
 function Index() {
   const { state } = useAuthState();
   const [messege, setMessege] = useState('');
-  const auth = useAuth()
-  const db = useFirestore()
+  const auth = useAuth();
+  const db = useFirestore();
   const onSend = async () => {
     try {
       await addDoc(collection(db, 'tasks'), {
-        messege
+        messege,
       });
-      setMessege("")
+      setMessege('');
     } catch (err) {
-      alert(err)
+      alert(err);
     }
-  }
+  };
   return (
     <>
-      <Head title="Home" description='Welcome'/>/
-      <div className="hero min-h-screen">
-        <div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Your Messege
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              placeholder="messege"
-              value={messege}
-              onChange={(e) => setMessege(e.target.value)}
-            />
+      <Head title="Home" description="Welcome" />/
+      <div className="carousel w-full">
+        <div id="slide1" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide2" className="btn btn-circle">
+              ❯
+            </a>
           </div>
-        <button className='btn' onClick={onSend}>
-          Send
-        </button>
+        </div>
+        <div id="slide2" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide3" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide4" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full">
+          <img src="https://placeimg.com/800/200/arch" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide1" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="card card-side bg-base-100 shadow-xl m-10">
+        <figure>
+          <img width="200px" src="https://placeimg.com/200/280/arch" alt="Movie" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">New movie is released!</h2>
+          <p>Click the button to watch on Jetflix app.</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Watch</button>
+          </div>
         </div>
       </div>
     </>
