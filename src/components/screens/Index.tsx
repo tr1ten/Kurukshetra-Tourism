@@ -6,6 +6,9 @@ import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
 import { useAuth, useFirestore, useStorage } from '~/lib/firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+// import Bharamsarovar1 from '../../assets/brahmaSarover.jpg';
+// import Jyotisar from '../../assets/jyotisar.jpg';
+// import Sheikh from '../../assets/sheikh.jpg';
 function Index() {
   const { state } = useAuthState();
   const [messege, setMessege] = useState('');
@@ -25,9 +28,9 @@ function Index() {
     <>
       <Head title="Home" description="Welcome" />
       <div className="flex">
-        <div className="carousel w-full flex-1">
+        <div className="carousel w-full h-72  flex-1">
           <div id="slide1" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <img src="" className="w-full h-1" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide4" className="btn btn-circle">
                 ❮
@@ -38,7 +41,7 @@ function Index() {
             </div>
           </div>
           <div id="slide2" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <img src="" className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide1" className="btn btn-circle">
                 ❮
@@ -49,7 +52,7 @@ function Index() {
             </div>
           </div>
           <div id="slide3" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <img src="" className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide2" className="btn btn-circle">
                 ❮
@@ -98,17 +101,30 @@ function Index() {
         {/* mmk */}
       </div>
 
-      <div className="card card-side bg-base-100 shadow-xl m-10">
+      <div className="card lg:card-side bg-base-100 shadow-xl m-4">
         <figure>
-          <img width="200px" src="https://placeimg.com/200/280/arch" alt="Movie" />
+          <img src="https://placeimg.com/400/400/arch" alt="Album" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Why visit KKR</h2>
-          <p>Click the button to watch on</p>
+          <h2 className="card-title">Why visit KKr</h2>
+          <p>Click the button to listen on Spotiwhy app.</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
+            <button className="btn btn-primary">Listen</button>
           </div>
         </div>
+      </div>
+
+      <div className="card lg:card-side bg-base-100 shadow-xl m-4">
+        <div className="card-body">
+          <h2 className="card-title">Facts about KKR</h2>
+          <p>Click the button to listen on Spotiwhy app.</p>
+          <div className="card-actions justify-start">
+            <button className="btn btn-primary">Listen</button>
+          </div>
+        </div>
+        <figure>
+          <img src="https://placeimg.com/400/400/arch" alt="Album" />
+        </figure>
       </div>
     </>
   );
