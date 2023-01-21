@@ -12,7 +12,7 @@ export const SignOutButton = (props: Props) => {
     <button
       onClick={handleClick}
       type="button"
-      className="btn normal-case"
+      className=""
     >
       Sign Out
     </button>

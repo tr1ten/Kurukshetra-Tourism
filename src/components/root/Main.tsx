@@ -9,7 +9,7 @@ function Main() {
   const { signOut } = useSignOut();
   useEffect(() => {
     setupFirebase();
-
+    console.log("setting up firebase");
     const auth = getAuth();
 
     onAuthStateChanged(auth, (user) => {

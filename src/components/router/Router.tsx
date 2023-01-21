@@ -1,8 +1,10 @@
 import { Dialog } from '@headlessui/react';
 import { lazy, Suspense, useState } from 'react';
 import { Outlet, RouteObject, useRoutes, BrowserRouter, Link } from 'react-router-dom';
+import { setupFirebase } from '~/lib/firebase';
 import AccomodationsPage from '../screens/Accomodations';
 import HeritagePage from '../screens/HeritagePage';
+import PlacePage from '../screens/PlacePage';
 import PlacesPage from '../screens/PlacesPage';
 import Footer from './Footer';
 import NavBar from './NavBar';
@@ -18,6 +20,10 @@ function Layout() {
     setIsDark(!isDark);
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
   }
+  useState(() => {
+    setupFirebase();
+    console.log("setting up firebase from layout");
+  });
   return (
     <div data-theme={isDark ? "dark" : 'light'}>
       <NavBar  toggleDark={toggleDark} />
@@ -57,8 +63,10 @@ const InnerRouter = () => {
           path: '/heritage',
           element: <HeritagePage />
         },
-        
-        
+        {
+          path: '/places/:placeId',
+          element: <PlacePage />
+        },
         {
           path: '*',
           element: <Page404Screen />,
