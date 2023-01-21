@@ -27,16 +27,6 @@ function HeritagePage() {
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
-        <div className="card-body">
-          <h2 className="card-title">SHRI KRISHNA MUSEUM</h2>
-          <div>
-            The museum, unravels the mystique of the cult of Lord Krishna. It endeavours to present the multifaceted
-            personality of of Mahabharata and the Bhagvata Purana. The museum has six galleries, three each in two
-            blocks. On display are stone sculptures, bronze castings, leaf etchings, miniature paintings, clay pottery
-            and terracotta artifacts. An extension of this museum is the Multimedia Mahabharata and Gita Gallery set up
-            by Haryana Tourism in collaboration with Ministry of Tourism, Government of India.
-          </div>
-        </div>
         <figure
           style={{
             justifyContent: 'flex-end',
@@ -44,11 +34,22 @@ function HeritagePage() {
           className="items-end justify-end"
         >
           <img
-            className="w-56 md:w-full"
-            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg"
+            className=" md:w-full"
+            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011268-1-1024x768.jpg"
             alt="Album"
           />
         </figure>
+        <div className="card-body">
+          <h2 className="card-title">SHRI KRISHNA MUSEUM</h2>
+          <div>
+            The museum, unravels the mystique of the cult of Lord Krishna. It endeavours to present the multifaceted
+            personality of The museum has six galleries, three each in two blocks. On display are stone personality of
+            The museum has six galleries, three each in two blocks. On display are stone sculptures, bronze castings,
+            leaf etchings, miniature paintings, clay pottery and terracotta artifacts. An extension of this museum is
+            the Multimedia Mahabharata and Gita Gallery set up by Haryana Tourism in collaboration with Ministry of
+            Tourism, Government of India.
+          </div>
+        </div>
       </div>
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
         <div className="card-body">
@@ -69,12 +70,11 @@ function HeritagePage() {
         >
           <img
             className="w-56 md:w-full"
-            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg"
+            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
             alt="Album"
           />
         </figure>
       </div>
-      
     </div>
   );
 }
