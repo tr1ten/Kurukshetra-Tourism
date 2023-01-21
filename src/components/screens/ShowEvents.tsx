@@ -32,7 +32,7 @@ function ShowEvents() {
     
     return (
         <div className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-2">
                 <EventCor events={events.filter((e)=>e.type==='UPCOMING')}/>
                 <EventCor events={events.filter((e)=>e.type==='ONGOING')}/>
             </div>

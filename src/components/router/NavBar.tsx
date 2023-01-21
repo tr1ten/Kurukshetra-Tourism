@@ -50,7 +50,7 @@ function NavBar(props: Props) {
                 Places to visit
               </Link>
               <Link className="btn btn-ghost" to={'/accommodations'}>
-                Accomodation
+                Accommodation
               </Link>
               <Link className="btn btn-ghost" to={'/heritage'}>
                 Heritage
@@ -70,7 +70,7 @@ function NavBar(props: Props) {
               Places to visit
             </Link>
             <Link className="btn btn-ghost" to={'/accommodations'}>
-              Accomodation
+              Accommodation
             </Link>
             <Link className="btn btn-ghost" to={'/heritage'}>
               Heritage

@@ -126,7 +126,7 @@ function Index() {
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow-xl m-4">
-        <video className="w-full md:w-1/3 " autoPlay muted>
+        <video className="w-full md:w-1/3 mx-auto " autoPlay muted>
           <source src={Video} type="video/mp4" />
         </video>
 
@@ -162,8 +162,8 @@ function Index() {
             </ul>
           </div>
         </div>
-        <div className='card-actions justify-center md:justify-end rounded '>
-          <img className='w-56 md:w-1/2' src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg" alt="Album" />
+        <div className='card-actions justify-center lg:justify-end rounded '>
+          <img className='w-56  md:w-1/2' src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg" alt="Album" />
         </div>
       </div>
      <div className=''>
