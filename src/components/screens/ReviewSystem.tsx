@@ -1,4 +1,4 @@
-import { collection, query, where, onSnapshot, setDoc, doc } from "firebase/firestore";
+import { collection, query, where, onSnapshot, setDoc, doc, orderBy, limit } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useAuth, useFirestore } from "~/lib/firebase";
 import { useAuthState } from "../contexts/UserContext";
@@ -21,7 +21,7 @@ function ReviewSystem({placeId}: {placeId: string}) {
     const [loading,setLoading] = useState(false);
     useEffect(() => {
         const reviewsRef = collection(db, 'reviews');
-        const q = query(reviewsRef, where('placeId', '==', placeId));
+        const q = query(reviewsRef, where('placeId', '==', placeId),limit(4));
         onSnapshot(q, (snapshot) => {
             setReviews(snapshot.docs.map(doc => doc.data() as Review));
         });
@@ -49,8 +49,8 @@ function ReviewSystem({placeId}: {placeId: string}) {
                 Reviews
             </h1>
             <div>
-            {reviews.length==0 ? <p>No reviews found!</p> : reviews.map(review => (
-                <div className="border  p-2">
+            {reviews.length==0 ? <p>No reviews found!</p> : reviews.map((review,ind) => (
+                <div className="border  p-2" key={`k-${ind}`}>
                     <div className="flex items-center gap-2">
                         <img className="w-10 h-10 rounded-full" src={review.img ?? "https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-white-blue-png-image_3918443.jpg"} alt="User" />
                         <div>

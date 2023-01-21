@@ -8,6 +8,7 @@ import { useAuth, useFirestore, useStorage } from '~/lib/firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { FaFacebook,FaInstagram,FaTwitter } from 'react-icons/fa';
 import Video from '../../assets/video.mp4';
+import ShowEvents from './ShowEvents';
 // import Bharamsarovar1 from '../../assets/brahmaSarover.jpg';
 // import Jyotisar from '../../assets/jyotisar.jpg';
 // import Sheikh from '../../assets/sheikh.jpg';
@@ -31,7 +32,7 @@ function Index() {
     <>
       <Head title="Home" description="Welcome" />
       <div className="flex w-full ">
-        <div className="carousel w-full">
+        <div className="carousel">
           <div id="slide1" className="carousel-item h-72 relative w-full">
             <img
               src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018052556.jpg"
@@ -161,14 +162,13 @@ function Index() {
             </ul>
           </div>
         </div>
-        <figure style={
-        {
-          justifyContent: 'flex-end',
-        }
-        } className='items-end justify-end'>
-          <img className='w-56 md:w-2/3' src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg" alt="Album" />
-        </figure>
+        <div className='card-actions justify-center md:justify-end rounded '>
+          <img className='w-56 md:w-1/2' src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg" alt="Album" />
+        </div>
       </div>
+     <div className=''>
+      <ShowEvents />
+     </div>
     </>
   );
 }

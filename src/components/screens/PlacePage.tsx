@@ -1,5 +1,5 @@
-import { collection, onSnapshot, query, where } from 'firebase/firestore';
-import { useState } from 'react';
+import { collection, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFirestore } from '~/lib/firebase';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -21,13 +21,13 @@ function PlacePage() {
   const { placeId } = useParams();
   const [place, setPlace] = useState<Place | null>(null);
   const db = useFirestore();
-  useState(() => {
+  useEffect(() => {
     const placesRef = collection(db, 'places');
     const q = query(placesRef, where('id', '==', placeId));
     onSnapshot(q, (snapshot) => {
       setPlace(snapshot.docs[0].data() as Place);
     });
-  });
+  },[]);
   return (
     <div className="w-10/12 md:w-8/12  m-auto">
       {!place ? (
