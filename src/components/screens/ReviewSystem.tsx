@@ -90,6 +90,7 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
                   </div>
                 </div>
                 <button className="w-fit justify-end">
+                    {/* @ts-ignore */}
                   {review.userId == auth.currentUser?.uid && <FaTrash className='text-red-500 text-sm' onClick={()=>onDeleteReview(review.userId,review[idKey])} />}
                 </button>
               </div>
