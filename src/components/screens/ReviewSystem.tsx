@@ -73,10 +73,9 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
                 />
                 <div>
                   <p className="font-semibold">{review.username ?? 'Anon'}</p>
-                    
+
                   <p className="text-sm text-gray-400">{review.rating ?? 5} ⭐</p>
                 </div>
-                  <FaTrash />
               </div>
               <p className="text-gray-500">{review.review}</p>
             </div>
@@ -90,17 +89,10 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
         <p className="my-2">Please sign in to write a review</p>
       ) : (
         <form onSubmit={onSubmitReview} className="flex flex-col my-4">
-         <div className='flex gap-4'>
+          <div className="flex gap-4">
             <p>Rate Overall Experience</p>
-         <StarRatingComponent 
-          name="rate1" 
-          starCount={5}
-          value={rating}
-          onStarClick={
-            (nx,px)=> setRating(nx)
-          }
-        />
-         </div>
+            <StarRatingComponent name="rate1" starCount={5} value={rating} onStarClick={(nx, px) => setRating(nx)} />
+          </div>
           <textarea
             placeholder="Awesome place..."
             className="textarea textarea-bordered"
