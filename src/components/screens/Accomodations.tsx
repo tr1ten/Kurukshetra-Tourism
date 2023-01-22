@@ -9,8 +9,8 @@ export interface Accomodation {
   img:string;
   title: string,
   url: string,
-  cost: 900,
-  rating: 4,
+  cost: number,
+  rating: number,
 }
 
 function AccomodationsPage() {

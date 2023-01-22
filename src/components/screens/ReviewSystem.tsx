@@ -57,7 +57,7 @@ function ReviewSystem({oid,idKey}: {oid: string,idKey: string}) {
                         <img className="w-10 h-10 rounded-full" src={review.img ?? "https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-white-blue-png-image_3918443.jpg"} alt="User" />
                         <div>
                         <p className="font-semibold">{review.username ?? "Anon"}</p>
-                        <p className="text-sm text-gray-400">{review.rating ?? 5}</p>
+                        <p className="text-sm text-gray-400">{review.rating ?? 5} ⭐</p>
                             </div>
                     </div>
                     <p className="text-gray-500">{review.review}</p>

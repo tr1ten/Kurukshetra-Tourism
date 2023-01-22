@@ -54,9 +54,9 @@ function PlacePage() {
                 <span className="text-lg font-semibold"> &#8377; {place.cost ?? 100}</span>
               </p>
               <div>
-                <Rating rating={place.rating ?? 3} />
+                <Rating rating={place.rating ?? 1} />
               </div>
-              <button className="btn">Open in map</button>
+              <a target="_blank" href={place.map ?? 'https://goo.gl/maps/GFLwTsv1nVg1WC3M6'} className="btn">Open in map</a>
             </div>
           </div>
           <div className="m-5">

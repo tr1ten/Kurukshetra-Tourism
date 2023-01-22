@@ -150,15 +150,13 @@ function Index() {
             <ul className="list-disc">
               <li>It is the land of the Bhagwad Gita</li>
               <li>
-                It was established in 1963 as Regional Engineering College Kurukshetra and upgraded to NIT status in
-                2002.
+              The city has various other names such as Brahmavedi, Brahmavrat, Nagahad, Ramahad, and Samantpanchak.
               </li>
               <li>
-                It offers undergraduate, postgraduate and doctoral programs in various fields of Engineering, Applied
-                Sciences, and Management
+              It was called with the name “Samantpanchak” when Maharishi Parashuram created five ponds with the blood of Kshatriyas as revenge for his father’s murder.
               </li>
-              <li>The campus is spread over an area of around 300 acres.</li>
-              <li>It has collaborations with many industries and foreign universities.</li>
+              <li>Many deities of the Hindu mythology are believed to have performed Yagyas and sacrifices in this place.</li>
+              <li>According to the Aryan theory, the battle between Aryans and Non-Aryans took place in Kurukshetra.</li>
             </ul>
           </div>
         </div>

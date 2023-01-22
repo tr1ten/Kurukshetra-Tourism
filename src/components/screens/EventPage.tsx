@@ -44,9 +44,9 @@ function EventPage() {
                           </p>
 
                           <div>
-                            <Rating rating={event.rating ?? 3} />
+                            <Rating rating={event.rating ?? 1} />
                           </div>
-                          <a href={event.map ?? "#"} className="btn">Open in map</a>
+                          <a target="_blank" href={event.map ?? 'https://goo.gl/maps/GFLwTsv1nVg1WC3M6'} className="btn">Open in map</a>
                         </div>
                       </div>
                       <div className="m-5">

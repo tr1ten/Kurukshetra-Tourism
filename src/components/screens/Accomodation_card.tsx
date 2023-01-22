@@ -10,7 +10,7 @@ function accomodation_card({ accommodation }: { accommodation: Accomodation}) {
         <h2 className="card-title text-center">{accommodation.title}</h2>
 
         <div>
-          <Rating rating={accommodation.rating} />
+          <Rating rating={accommodation.rating ?? 1} />
         </div>
         <div className="flex">
           <div className="badge ">Price</div>
