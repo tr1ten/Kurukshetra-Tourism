@@ -22,11 +22,22 @@ function PlacePage() {
   const { placeId } = useParams();
   const [place, setPlace] = useState<Place | null>(null);
   const db = useFirestore();
+  const [aggRating, setAggRating] = useState(1);
+
   useEffect(() => {
     const placesRef = collection(db, 'places');
     const q = query(placesRef, where('id', '==', placeId));
     onSnapshot(q, (snapshot) => {
       setPlace(snapshot.docs[0].data() as Place);
+    });
+    const reviewsRef = collection(db, 'reviews');
+    const q2 = query(reviewsRef, where('placeId', '==', placeId));
+    onSnapshot(q2, (snapshot) => {
+      const ratings = snapshot.docs.map((e) => e.data().rating);
+      const sum = ratings.reduce((a, b) => a + b, 0);
+      const avg = sum / ratings.length;
+      console.log("avg place rating ",avg);
+      setAggRating(avg);
     });
   }, []);
   return (
@@ -54,7 +65,7 @@ function PlacePage() {
                 <span className="text-lg font-semibold"> &#8377; {place.cost ?? 100}</span>
               </p>
               <div>
-                <Rating rating={place.rating ?? 1} />
+                <Rating rating={aggRating ?? (place.rating ?? 1)} />
               </div>
               <a target="_blank" href={place.map ?? 'https://goo.gl/maps/GFLwTsv1nVg1WC3M6'} className="btn">Open in map</a>
             </div>

@@ -10,6 +10,7 @@ import { Event } from "./ShowEvents";
 function EventPage() {
     const [event, setEvent] = useState<Event | null>(null);
     const { eventId } = useParams<{ eventId: string }>();
+    const [aggRating, setAggRating] = useState<number>();
     const db = useFirestore();
     useEffect(() => {
         const eventsRef = collection(db, 'events');
@@ -17,8 +18,15 @@ function EventPage() {
         onSnapshot(q, (snapshot) => {
             setEvent(snapshot.docs[0].data() as Event);
         });
+        const reviewsRef = collection(db, 'reviews');
+        const q2 = query(reviewsRef, where('eventId', '==', eventId));
+        onSnapshot(q2, (snapshot) => {
+            const ratings = snapshot.docs.map(doc => doc.data().rating);
+            const avg = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+            setAggRating(avg);
+        });
     },[]);
-    console.log("Event", event);
+
     return (
         <div className="w-10/12 md:w-8/12  m-auto">
             {!event ? <p>No Such event Exist...</p> :
@@ -44,7 +52,7 @@ function EventPage() {
                           </p>
 
                           <div>
-                            <Rating rating={event.rating ?? 1} />
+                            <Rating rating={aggRating ?? (event.rating ?? 1)} />
                           </div>
                           <a target="_blank" href={event.map ?? 'https://goo.gl/maps/GFLwTsv1nVg1WC3M6'} className="btn">Open in map</a>
                         </div>
