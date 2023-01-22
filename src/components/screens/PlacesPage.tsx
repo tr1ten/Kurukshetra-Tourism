@@ -23,7 +23,7 @@ function PlacesPage() {
       <h1 className='font-bold text-center m-2 text-2xl'>Amazing Places to Visit</h1>
       {
         places.length===0 ? <p>No Places found!</p> :
-        <div className="flex gap-4 mx-auto my-5 flex-wrap">{places.map((e) => <PlaceCard place={e}/>)}</div>
+        <div className="flex gap-4 mx-auto my-5 flex-wrap items-center justify-center">{places.map((e) => <PlaceCard place={e}/>)}</div>
       }
     </div>
   );

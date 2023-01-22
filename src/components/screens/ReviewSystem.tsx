@@ -30,6 +30,10 @@ function ReviewSystem({oid,idKey}: {oid: string,idKey: string}) {
     const [review, setReview] = useState("");
     const onSubmitReview = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if(review.length==0) {
+            alert("Please enter a review!");
+            return;
+        }
         setLoading(true);
         const reviewRef = collection(db, 'reviews');
         const reviewDoc = {

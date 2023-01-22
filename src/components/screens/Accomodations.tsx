@@ -25,10 +25,10 @@ function AccomodationsPage() {
     
   },[]);
   return (
-    <>
+    <div>
       <Head title='Accomodations' />
       <h1 className='font-bold text-center m-2 text-2xl'>Accommodations</h1>
-    <div className="flex flex-wrap mx-10 m-5 gap-4">
+    <div className="flex flex-wrap items-center justify-center mx-10 m-5 gap-4">
       {
         Accomodations.length===0 ? <p>No Accomodations found!</p> :
         Accomodations.map((e,i) => (
@@ -36,7 +36,7 @@ function AccomodationsPage() {
         ))
       }
     </div>
-    </>
+    </div>
   );
 }
 
