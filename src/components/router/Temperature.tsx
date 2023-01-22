@@ -4,7 +4,7 @@ function Temperature() {
     const [temperature, setTemperature] = useState(0);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch("http://api.weatherapi.com/v1/current.json?key=51441fed7c4c42288dc63014232201&q=Haryana&aqi=no").then(res => res.json()).then(data => {
+        fetch("https://api.weatherapi.com/v1/current.json?key=51441fed7c4c42288dc63014232201&q=Haryana&aqi=no").then(res => res.json()).then(data => {
             setTemperature(data.current.temp_c);
             setLoading(false);
         });
