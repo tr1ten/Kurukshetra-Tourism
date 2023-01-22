@@ -1,4 +1,4 @@
-import { collection, query, where, onSnapshot, setDoc, doc, orderBy, limit } from 'firebase/firestore';
+import { collection, query, where, onSnapshot, setDoc, doc, orderBy, limit, deleteDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useAuth, useFirestore } from '~/lib/firebase';
 import { useAuthState } from '../contexts/UserContext';
@@ -53,6 +53,17 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
     setReview('');
     setLoading(false);
   };
+  const onDeleteReview = async (userId:string,id:string) => {
+        setLoading(true);
+        const reviewsRef = collection(db, 'reviews');
+        const q = query(reviewsRef, where('userId', '==', userId), where(idKey, '==', id));
+        onSnapshot(q, (snapshot) => {
+            snapshot.docs.map((doc) => {
+                deleteDoc(doc.ref);
+            });
+        });
+        setLoading(false);
+  }
   return (
     <div>
       <h1 className="font-bold text-xl m-2">Reviews</h1>
@@ -62,20 +73,25 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
         ) : (
           reviews.map((review, ind) => (
             <div className="border  p-2" key={`k-${ind}`}>
-              <div className="flex items-center gap-2">
-                <img
-                  className="w-10 h-10 rounded-full"
-                  src={
-                    review.img ??
-                    'https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-white-blue-png-image_3918443.jpg'
-                  }
-                  alt="User"
-                />
-                <div>
-                  <p className="font-semibold">{review.username ?? 'Anon'}</p>
+              <div className="flex justify-between items-center">
+                <div className='flex items-center gap-2'>
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={
+                      review.img ??
+                      'https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-white-blue-png-image_3918443.jpg'
+                    }
+                    alt="User"
+                  />
+                  <div>
+                    <p className="font-semibold">{review.username ?? 'Anon'}</p>
 
-                  <p className="text-sm text-gray-400">{review.rating ?? 5} ⭐</p>
+                    <p className="text-sm text-gray-400">{review.rating ?? 5} ⭐</p>
+                  </div>
                 </div>
+                <button className="w-fit justify-end">
+                  {review.userId == auth.currentUser?.uid && <FaTrash className='text-red-500 text-sm' onClick={()=>onDeleteReview(review.userId,review[idKey])} />}
+                </button>
               </div>
               <p className="text-gray-500">{review.review}</p>
             </div>
