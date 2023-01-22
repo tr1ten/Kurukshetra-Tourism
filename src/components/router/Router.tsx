@@ -9,6 +9,7 @@ import PlacePage from '../screens/PlacePage';
 import PlacesPage from '../screens/PlacesPage';
 import Footer from './Footer';
 import NavBar from './NavBar';
+import Pocket from '../screens/Pocketfriendly';
 
 const Loading = () => <p className="p-4 w-full h-full text-center">Loading...</p>;
 
@@ -20,14 +21,14 @@ function Layout() {
   const toggleDark = () => {
     setIsDark(!isDark);
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  }
+  };
   useState(() => {
     setupFirebase();
-    console.log("setting up firebase from layout");
+    console.log('setting up firebase from layout');
   });
   return (
-    <div data-theme={isDark ? "dark" : 'light'}>
-      <NavBar  toggleDark={toggleDark} />
+    <div data-theme={isDark ? 'dark' : 'light'}>
+      <NavBar toggleDark={toggleDark} />
       <Outlet />
       <Footer />
     </div>
@@ -54,24 +55,27 @@ const InnerRouter = () => {
         },
         {
           path: '/places',
-          element: <PlacesPage />
+          element: <PlacesPage />,
+        },
+        {
+          path: '/pocket_friendly_tourism',
+          element: <Pocket />,
         },
         {
           path: '/accommodations',
-          element: <AccomodationsPage />
+          element: <AccomodationsPage />,
         },
         {
           path: '/heritage',
-          element: <HeritagePage />
+          element: <HeritagePage />,
         },
         {
           path: '/places/:placeId',
-          element: <PlacePage />
+          element: <PlacePage />,
         },
         {
           path: '/events/:eventId',
-          element: <EventPage />
-
+          element: <EventPage />,
         },
         {
           path: '*',

@@ -6,9 +6,11 @@ import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
 import { useAuth, useFirestore, useStorage } from '~/lib/firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
-import { FaFacebook,FaInstagram,FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Video from '../../assets/video.mp4';
 import ShowEvents from './ShowEvents';
+import { Link } from 'react-router-dom';
+
 // import Bharamsarovar1 from '../../assets/brahmaSarover.jpg';
 // import Jyotisar from '../../assets/jyotisar.jpg';
 // import Sheikh from '../../assets/sheikh.jpg';
@@ -17,7 +19,7 @@ function Index() {
   const [messege, setMessege] = useState('');
   const auth = useAuth();
   const db = useFirestore();
-  
+
   const onSend = async () => {
     try {
       await addDoc(collection(db, 'tasks'), {
@@ -94,28 +96,30 @@ function Index() {
           <div className="menu p-4 w-full md:w-80 flex flex-col bg-blue-400 h-full text-white">
             {/* <!-- Sidebar content here --> */}
             <div>
-            <li>
-              <a href='https://en.wikipedia.org/wiki/Tourism'>Pocket friendly tourism</a>
-            </li>
-            <li>
-              <a href='https://www.tripadvisor.in/Attractions-g1584791-Activities-zft11306-Kurukshetra_Kurukshetra_District_Haryana.html'>Kids Attraction</a>
-            </li>
-            <li>
-              <a href='https://kurukshetra.gov.in/kurukshetra-360-view'>Kurukshetra@360</a>
-            </li>
-            <li>
-              <a href='https://www.fabhotels.com/blog/picnic-spots-in-and-around-gurgaon/'>Picnic spots</a>
-            </li>
+              <li>
+                <Link to={'/pocket_friendly_tourism'}>Pocket friendly tourism</Link>
+              </li>
+              <li>
+                <a href="https://www.tripadvisor.in/Attractions-g1584791-Activities-zft11306-Kurukshetra_Kurukshetra_District_Haryana.html">
+                  Kids Attraction
+                </a>
+              </li>
+              <li>
+                <a href="https://kurukshetra.gov.in/kurukshetra-360-view">Kurukshetra@360</a>
+              </li>
+              <li>
+                <a href="https://www.fabhotels.com/blog/picnic-spots-in-and-around-gurgaon/">Picnic spots</a>
+              </li>
             </div>
             {/* Social media icons */}
             <div className="">
-              <a target='_blank' href="https://www.facebook.com/kurukshetra.tourism" className="btn btn-ghost btn-sm">
+              <a target="_blank" href="https://www.facebook.com/kurukshetra.tourism" className="btn btn-ghost btn-sm">
                 <FaFacebook />
               </a>
-              <a target='_blank' href="https://www.instagram.com/kurukshetra_tourism/" className="btn btn-ghost btn-sm">
+              <a target="_blank" href="https://www.instagram.com/kurukshetra_tourism/" className="btn btn-ghost btn-sm">
                 <FaInstagram />
               </a>
-              <a target='_blank' href="https://twitter.com/kurukshetra_t" className="btn btn-ghost btn-sm">
+              <a target="_blank" href="https://twitter.com/kurukshetra_t" className="btn btn-ghost btn-sm">
                 <FaTwitter />
               </a>
             </div>
@@ -129,7 +133,6 @@ function Index() {
         <video className="w-full md:w-1/3 mx-auto " autoPlay muted>
           <source src={Video} type="video/mp4" />
         </video>
-
 
         <div id="explore" className="card-body">
           <h2 className="card-title">Why one should visit Kurukshetra?</h2>
@@ -150,23 +153,32 @@ function Index() {
             <ul className="list-disc">
               <li>It is the land of the Bhagwad Gita</li>
               <li>
-              The city has various other names such as Brahmavedi, Brahmavrat, Nagahad, Ramahad, and Samantpanchak.
+                The city has various other names such as Brahmavedi, Brahmavrat, Nagahad, Ramahad, and Samantpanchak.
               </li>
               <li>
-              It was called with the name “Samantpanchak” when Maharishi Parashuram created five ponds with the blood of Kshatriyas as revenge for his father’s murder.
+                It was called with the name “Samantpanchak” when Maharishi Parashuram created five ponds with the blood
+                of Kshatriyas as revenge for his father’s murder.
               </li>
-              <li>Many deities of the Hindu mythology are believed to have performed Yagyas and sacrifices in this place.</li>
-              <li>According to the Aryan theory, the battle between Aryans and Non-Aryans took place in Kurukshetra.</li>
+              <li>
+                Many deities of the Hindu mythology are believed to have performed Yagyas and sacrifices in this place.
+              </li>
+              <li>
+                According to the Aryan theory, the battle between Aryans and Non-Aryans took place in Kurukshetra.
+              </li>
             </ul>
           </div>
         </div>
-        <div className='card-actions justify-center lg:justify-end rounded '>
-          <img className='w-56  md:w-1/2' src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg" alt="Album" />
+        <div className="card-actions justify-center lg:justify-end rounded ">
+          <img
+            className="w-56  md:w-1/2"
+            src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg"
+            alt="Album"
+          />
         </div>
       </div>
-     <div className=''>
-      <ShowEvents />
-     </div>
+      <div className="">
+        <ShowEvents />
+      </div>
     </>
   );
 }
