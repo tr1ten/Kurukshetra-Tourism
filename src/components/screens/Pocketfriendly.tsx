@@ -1,6 +1,9 @@
+import { Head } from "../shared/Head";
+
 function PocketFriendly() {
   return (
     <div>
+      <Head title="Pocket Friendly" />
       <h1 className="font-bold font-xl justify-center text-center">Pocket friendly tourism</h1>
       <p className="text-[#50d71e] text-center m-4 ">
         Let’s roam around Kururkshetra under Rs. 100/- per head. Let's chill/enjoy in Kurukshetra under Rs. 100/- per

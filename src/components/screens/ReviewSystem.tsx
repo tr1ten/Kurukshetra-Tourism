@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useAuth, useFirestore } from '~/lib/firebase';
 import { useAuthState } from '../contexts/UserContext';
 import StarRatingComponent from 'react-star-rating-component';
+import { FaTrash } from 'react-icons/fa';
 
 interface Review {
   placeId: string;
@@ -72,8 +73,10 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
                 />
                 <div>
                   <p className="font-semibold">{review.username ?? 'Anon'}</p>
+                    
                   <p className="text-sm text-gray-400">{review.rating ?? 5} ⭐</p>
                 </div>
+                  <FaTrash />
               </div>
               <p className="text-gray-500">{review.review}</p>
             </div>

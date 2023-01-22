@@ -3,6 +3,7 @@ import { useAuthState, useSignIn } from '../contexts/UserContext';
 import { SignInButton } from '../domain/auth/SignInButton';
 import { SignOutButton } from '../domain/auth/SignOutButton';
 import Logo from './logo.png';
+import Temperature from './Temperature';
 type Props = {
   toggleDark: () => void;
 };
@@ -78,6 +79,7 @@ function NavBar(props: Props) {
           </ul>
         </div>
         <div className="navbar-end">
+          <Temperature />
           <a href='/#explore' className="btn bg-blue-500 border-none">Explore</a>
         </div>
       </div>
