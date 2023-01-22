@@ -25,7 +25,7 @@ function ReviewSystem({ oid, idKey }: { oid: string; idKey: string }) {
 
   useEffect(() => {
     const reviewsRef = collection(db, 'reviews');
-    const q = query(reviewsRef, where(idKey, '==', oid), limit(4));
+    const q = query(reviewsRef, where(idKey, '==', oid), limit(6));
     onSnapshot(q, (snapshot) => {
       setReviews(snapshot.docs.map((doc) => doc.data() as Review));
     });

@@ -6,6 +6,7 @@ import EventCor from "./EventCor";
 export interface Event {
     id: string;
     title: string;
+    embed_url: string;
     description: string;
     date: string;
     time: string;
