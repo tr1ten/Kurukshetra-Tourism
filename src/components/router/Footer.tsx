@@ -10,7 +10,7 @@ function Footer() {
         >
           Ravindra Kumar Prajapat
         </a>
-        <a className="link link-hover" href="https://www.linkedin.com/in/tr1ten/s" target="_blank">
+        <a className="link link-hover" href="https://www.linkedin.com/in/tr1ten" target="_blank">
           Shubham Gupta
         </a>
         <a className="link link-hover" href="https://www.linkedin.com/in/sushmit-bhalothia-110276229/" target="_blank">

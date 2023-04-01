@@ -10,6 +10,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Video from '../../assets/video.mp4';
 import ShowEvents from './ShowEvents';
 import { Link } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
 
 // import Bharamsarovar1 from '../../assets/brahmaSarover.jpg';
 // import Jyotisar from '../../assets/jyotisar.jpg';
@@ -34,7 +35,7 @@ function Index() {
     <>
       <Head title="Home" description="Welcome" />
       <div className="flex flex-col md:flex-row w-full ">
-        <div className="carousel">
+        {/* <div className="carousel">
           <div id="slide1" className="carousel-item h-fit md:h-96  relative w-full">
             <img
               src="https://drive.google.com/uc?export=download&id=1NXrZYHXwGKbh2_1p-hyO6UYmPO3WuDza"
@@ -91,7 +92,43 @@ function Index() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
+        <Carousel
+          showThumbs={false}
+          showStatus={false}  
+          autoPlay
+          width={"100%"}
+          dynamicHeight
+          infiniteLoop
+        >
+          <div className="carousel-item h-fit md:h-3/6 relative w-full">
+            <img
+              src="https://drive.google.com/uc?export=download&id=1NXrZYHXwGKbh2_1p-hyO6UYmPO3WuDza"
+              className="w-full"
+            />
+          </div>
+          <div
+           className="carousel-item h-fit md:h-3/6 relative w-full"
+           >
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/05/2018052556.jpg"
+              className="w-full"
+            />
+          </div>
+          <div className="carousel-item h-fit md:h-3/6 relative w-full">
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022012554-1024x576.jpg"
+              className="w-full"
+            />
+          </div>
+          <div className="carousel-item h-fit md:h-3/6 relative w-full">
+            <img
+              src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2022/01/2022011270-1024x768.jpg"
+              className="w-full"
+            />
+          </div>
+
+        </Carousel>
         <div>
           <div className="menu p-4 w-full md:w-80 flex flex-col bg-blue-400 h-full text-white">
             {/* <!-- Sidebar content here --> */}
